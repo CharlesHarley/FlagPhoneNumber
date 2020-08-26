@@ -278,6 +278,13 @@ open class FPNTextField: UITextField {
     @objc open func setFlag(country: FPNCountry) {
         setFlag(countryCode: country.code)
     }
+    
+    /// Set the country image according to the country code string
+    @objc open func setFlag(countryCodeString: String) {
+        if let countryCode = FPNCountryCode(rawValue: countryCodeString) {
+            self.setFlag(countryCode: countryCode)
+        }
+    }
 
 	/// Set the country image according to country code. Example "FR"
 	@objc open func setFlag(key: FPNOBJCCountryKey) {
